@@ -8,6 +8,7 @@ ENV MARATHON_PORT 8080
 
 RUN \
     yum install -y haproxy cronie sudo && \
-    yum clean all
+    yum clean all && \
+    chmod 755 haproxy-marathon-bridge
 
 EXPOSE 80 443

@@ -10,4 +10,4 @@ test:
   override:
     - docker run -d -p 31000:31000 -e MARATHON_ADDRESS="m12.io" -e MARATHON_PORT="666" mesos-haproxy; sleep 15
     # Test:
-    - curl --retry 5 --retry-delay 1 -v http://localhost:31000
+    - curl -L -v http://127.0.0.1:31000
