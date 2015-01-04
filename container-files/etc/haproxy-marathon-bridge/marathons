@@ -1,0 +1,7 @@
+#   Place marathons servers here following example
+#   IP(or domain name):Port
+# 127.0.0.1:8080
+# my.marathon.com:8080
+
+# Default Setting:
+127.0.0.1:8080
