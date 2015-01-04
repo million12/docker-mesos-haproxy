@@ -1,0 +1,13 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t mesos-haproxy .
+
+test:
+  override:
+    - docker run --name mesos-haproxy -d -p 31000:31000 -e MARATHON_ADDRESS="m12.io" -e MARATHON_PORT="666" mesos-haproxy && sleep 20
+
+    - docker exec -t mesos-haproxy cat /etc/haproxy-marathon-bridge/marathons
